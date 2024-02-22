@@ -1,5 +1,5 @@
 import React from "react";
-// import logo from "../../public/Assets/site_logo.png";
+import logo from "../../public/Assets/site_logo.png";
 
 const Footer = () => {
   return (
@@ -7,11 +7,7 @@ const Footer = () => {
       <div className="container  mx-auto px-4 lg:px-8 flex  flex-col lg:flex-row justify-between items-center">
         {/* <!-- Logo and site name --> */}
         <div className="mb-8 lg:mb-0">
-          <img
-            src="https://tse3.mm.bing.net/th?id=OIP.4dcJ_AHTJ81dikKbJ_xBtgHaGw&pid=Api&P=0&h=180"
-            alt="Site Logo"
-            className="h-24 mb-2"
-          />
+          <img src={logo} alt="Site Logo" className="h-24 mb-2" />
           <h1 className="text-lg font-semibold">Foodie Feast</h1>
           {/* <p className="text-gray-400">Bringing food to your doorstep</p> */}
         </div>
