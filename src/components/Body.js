@@ -13,7 +13,10 @@ const Body = () => {
   const user = useContext(userContext);
   async function fetchData() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5946784&lng=73.7095365&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.org/?" +
+        encodeURIComponent(
+          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5946784&lng=73.7095365&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        )
     );
     const jsonData = await data.json();
     const cards =
