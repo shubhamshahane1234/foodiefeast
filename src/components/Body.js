@@ -8,7 +8,7 @@ import userContext from "./../utils/userContext";
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
-  const [filterData, setFilter] = useState([]);
+  const [filterData, setFilter] = useState(null);
   const [search, setSearch] = useState("");
   const user = useContext(userContext);
   async function fetchData() {
@@ -43,7 +43,7 @@ const Body = () => {
   console.log("body", filterData, restaurants);
   {
     console.log("return");
-    return filterData ? (
+    return filterData == null ? (
       <Shimmer />
     ) : (
       <>
