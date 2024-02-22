@@ -9,9 +9,9 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
   const { name, costForTwoMessage, cuisines, avgRating } =
-    resInfo?.cards[0]?.card?.card?.info || {};
+    resInfo?.cards[2]?.card?.card?.info || {};
   const cloudinaryImageId =
-    resInfo?.cards[0]?.card?.card?.info?.cloudinaryImageId;
+    resInfo?.cards[2]?.card?.card?.info?.cloudinaryImageId;
   console.log(resInfo);
   return resInfo == null ? (
     <>
@@ -46,7 +46,7 @@ const RestaurantMenu = () => {
 
         {/* <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus sem a hendrerit...</p> */}
       </section>
-      <Accordion menuList={resInfo?.cards[2]} />
+      <Accordion menuList={resInfo?.cards[4]} />
     </div>
   );
 };
