@@ -43,7 +43,7 @@ const Body = () => {
   console.log("body", filterData, restaurants);
   {
     console.log("return");
-    return filterData?.length == 0 ? (
+    return filterData ? (
       <Shimmer />
     ) : (
       <>
