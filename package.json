@@ -1,5 +1,6 @@
 {
   "name": "shubaam_react",
+  "type": "module",
   "version": "1.0.0",
   "description": "this is shubham react",
   "scripts": {
