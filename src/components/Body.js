@@ -30,7 +30,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [restaurants]);
 
   const takeSearch = (value) => {
     setSearch(value);

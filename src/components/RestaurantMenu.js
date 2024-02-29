@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Shimmer from "./Shimmer";
+import RestaurantMenuShimmer from "../components//Shimmers/RestaurantMenuShimmer";
 import { CDN_URL } from "../utils/Constants";
 import Accordion from "./Accordion";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
@@ -15,7 +15,7 @@ const RestaurantMenu = () => {
   console.log(resInfo);
   return resInfo == null ? (
     <>
-      <Shimmer />
+      <RestaurantMenuShimmer />
     </>
   ) : (
     <div className="mx-10 sm:mx-20">

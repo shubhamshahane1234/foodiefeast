@@ -14,7 +14,13 @@ const RestaurantCard = (props) => {
         src={`${CDN_URL}${cloudinaryImageId}`}
       />
       <div className="p-4">
-        <h2 className="text-xl  font-semibold">{name}</h2>
+        <h2
+          className="
+        text-xl  
+        font-semibold"
+        >
+          {name}
+        </h2>
         <div class="flex items-center space-x-2 text-gray-700">
           <svg
             class="w-4 h-4 text-yellow-500 me-1"

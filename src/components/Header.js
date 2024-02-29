@@ -20,9 +20,8 @@ const Header = () => {
     <header>
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <Link to="https://flowbite.com" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src={logo} className="mr-3 h-6 sm:h-28" alt="Logo" />
-            {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> */}
           </Link>
           <div className="flex items-center lg:order-2">
             <Link
@@ -30,16 +29,28 @@ const Header = () => {
                 toggle();
               }}
               to="#"
-              className="text-gray-800  focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:text-gray-400 dark:focus:ring-gray-800"
+              className="text-gray-800 w-[95px]  focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:text-gray-400 dark:focus:ring-gray-800"
             >
               {toggler}
             </Link>
-            <Link
+            {/* <span
               to="#"
               className={`"bg-primary-700 ${
                 onlineStatus ? "bg-green-600" : "bg-red-500"
-              }  hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"`}
-            ></Link>
+              }  hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-full text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"`}
+            ></span> */}
+            <div className="flex items-end dark:text-gray-400 justify-between w-[75px] ">
+              <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                <circle
+                  r="10"
+                  cx="10"
+                  cy="10"
+                  fill={onlineStatus ? "green" : "red"}
+                />
+              </svg>
+              <span>{onlineStatus ? "online" : "offline"}</span>
+            </div>
+
             <button
               data-collapse-toggle="mobile-menu-2"
               type="button"
