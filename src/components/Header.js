@@ -3,14 +3,18 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useSelector } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
   const [toggler, useToggle] = useState("log in");
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
   const toggle = () => {
     toggler == "log in" ? useToggle("log out") : useToggle("log in");
   };
   const cartItems = useSelector((store) => store.cart.items);
+  const dishData = useSelector((store) => store.dish.data);
   const onlineStatus = useOnlineStatus();
   const ShowHamburger = () => {
     setShow(!show);
@@ -122,7 +126,20 @@ const Header = () => {
                   Services
                 </Link>
               </li>
-              <li>
+              <li
+                onClick={() => {
+                  console.log(dishData);
+                }}
+                onDrop={() => {
+                  dispatch(addItem(dishData));
+                  console.log("dropped");
+                }}
+                onDragOver={(e) => {
+                  let event = e;
+                  event.stopPropagation();
+                  event.preventDefault();
+                }}
+              >
                 <Link
                   to="/cart"
                   className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
