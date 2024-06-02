@@ -55,7 +55,7 @@ const Accordion = (props) => {
               {/* Dish List */}
               <ul className="flex flex-wrap">
                 {section?.card?.card?.itemCards?.map((dish, dishIndex) => {
-                  console.log(cartItems, "cartitems");
+                  // console.log(cartItems, "cartitems");
                   const { imageId, name, description, price } =
                     dish?.card?.info;
                   return (
