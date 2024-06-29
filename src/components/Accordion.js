@@ -25,17 +25,22 @@ const Accordion = (props) => {
 
   return (
     // <div className="  max-w-2xl mx-auto">
-    <div className="max-w-80 lg:mx-auto lg:max-w-2xl lg:px-6">
+    <div className="  m-auto; sm:m-auto ; lg: max-w-2xl mx-auto  px-6;">
       {menuList?.map((section, index) => {
         const { title } = section?.card?.card;
         return (
-          <div key={index} className="bg-white p-4 rounded-md shadow-md mb-4">
+          <div
+            key={index}
+            className="bg-white p-4 rounded-md shadow-md mb-4 min-h-[50px]"
+          >
             {/* Accordion Header */}
             <div
-              className="flex justify-between items-center cursor-pointer bg-gray-50 p-4 rounded-md"
+              className="flex justify-between items-center cursor-pointer bg-gray-50 p-4 rounded-md h-[20px]"
               onClick={() => toggleAccordion(index)}
             >
-              <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
+              <h2 className="text-sm lg:text-lg font-semibold text-gray-800;">
+                {title}
+              </h2>
               <svg
                 className={`w-6 h-6 text-gray-600 transform transition-transform ${
                   activeIndex === index ? "rotate-180" : ""
@@ -86,11 +91,15 @@ const Accordion = (props) => {
                         </div>
 
                         <div className="  w-9/12 flex flex-col">
-                          <h3 className="text-lg font-semibold text-gray-800">
+                          <h3 className="text-sm lg:text-lg font-semibold text-gray-800">
                             {name}
                           </h3>
-                          <p className="text-gray-600">{price / 100}₹</p>
-                          <p className="text-gray-500">{description}</p>
+                          <p className="text-sm lg:text-lg text-gray-600">
+                            {price / 100}₹
+                          </p>
+                          <p className=" text-sm lg:text-lg text-gray-500">
+                            {description}
+                          </p>
                         </div>
                       </li>
                       <div

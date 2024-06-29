@@ -12,13 +12,14 @@ const RestaurantMenu = () => {
     resInfo?.cards[2]?.card?.card?.info || {};
   const cloudinaryImageId =
     resInfo?.cards[2]?.card?.card?.info?.cloudinaryImageId;
+  const id = resInfo?.cards[2]?.card?.card?.info?.id;
   console.log(resInfo);
-  return resInfo == null ? (
+  return resInfo === null ? (
     <>
       <RestaurantMenuShimmer />
     </>
   ) : (
-    <div className="mx-10 sm:mx-20">
+    <div key={id} className="mx-10 sm:mx-20">
       <section className="container  mt-8">
         {/* <img
           src={`${CDN_URL}${cloudinaryImageId}`}
@@ -26,7 +27,7 @@ const RestaurantMenu = () => {
           class="w-full h-64 object-cover rounded-md shadow-lg mb-4"
         /> */}
         <div class="mb-4">
-          <h1 class="text-2xl font-bold text-gray-800">{name}</h1>
+          <h1 class="text-xl lg:text-2xl font-bold text-gray-800">{name}</h1>
           <div class="flex items-center space-x-2 text-gray-700">
             <svg
               class="w-4 h-4 text-yellow-500 me-1"
@@ -46,6 +47,7 @@ const RestaurantMenu = () => {
 
         {/* <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus sem a hendrerit...</p> */}
       </section>
+      <h2 class=" text-2xl lg:text-3xl font-bold text-center">Menu</h2>
       <Accordion menuList={resInfo?.cards[4]} />
     </div>
   );

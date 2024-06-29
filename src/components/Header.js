@@ -23,11 +23,11 @@ const Header = () => {
   return (
     <header>
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-[1620px]">
           <Link to="/" className="flex items-center">
-            <img src={logo} className="mr-3 h-6 sm:h-28" alt="Logo" />
+            <img src={logo} className="mr-3 h-8 sm:h-12" alt="Logo" />
           </Link>
-          <div className="flex items-center lg:order-2">
+          <div className="flex items-center lg:order-2 ">
             <Link
               onClick={() => {
                 toggle();
@@ -49,7 +49,7 @@ const Header = () => {
                   r="10"
                   cx="10"
                   cy="10"
-                  fill={onlineStatus ? "green" : "red"}
+                  fill={onlineStatus ? "#5EFF09" : "red"}
                 />
               </svg>
               <span>{onlineStatus ? "online" : "offline"}</span>
