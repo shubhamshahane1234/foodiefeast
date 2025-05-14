@@ -20,10 +20,10 @@ const App = () => {
   return (
     <>
       <Provider store={appStore}>
-        <div>
-          <Header />
-          <Outlet />
-          <Footer />
+        <div className="flex flex-col min-h-[100vh] justify-between">
+          <Header className="column" />
+          <Outlet className="column" />
+          <Footer className="column" />
         </div>
       </Provider>
     </>

@@ -13,9 +13,9 @@ const Body = () => {
   const user = useContext(userContext);
   async function fetchData() {
     const data = await fetch(
-      `https://api.allorigins.win/raw?url=${encodeURIComponent(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5946784&lng=73.7095365&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      )}`
+      // `https://api.allorigins.win/raw?url=${encodeURIComponent(
+      "https://thingproxy-760k.onrender.com/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5946784&lng=73.7095365&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      // )}`
     );
 
     // fetch(
@@ -85,7 +85,11 @@ const Body = () => {
                     return (
                       <Link
                         className="m-auto"
-                        to={`/Restaurant/${card?.info?.id}`}
+                        to={
+                          restaurants.length !== 0
+                            ? `/Restaurant/${card?.info?.id}`
+                            : ""
+                        }
                       >
                         <RestaurantCard key={card?.info?.id} cardinfo={card} />
                       </Link>
