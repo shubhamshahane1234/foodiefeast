@@ -44,9 +44,18 @@ const Header = () => {
               }  hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-full text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"`}
             ></span> */}
             <div className="flex items-end dark:text-gray-400 justify-between w-[75px] ">
-              <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                height="20"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+                className={
+                  onlineStatus
+                    ? "drop-shadow-[0_0_6px_#5EFF09] text-[#5EFF09]"
+                    : "drop-shadow-[0_0_6px_#ff0000] text-[red]"
+                }
+              >
                 <circle
-                  r="10"
+                  r="5"
                   cx="10"
                   cy="10"
                   fill={onlineStatus ? "#5EFF09" : "red"}
