@@ -4,7 +4,8 @@ const useRestaurantMenu = (resId) => {
 
   const restaurantMenufn = async () => {
     const fetchMenu = await fetch(
-      `https://thingproxy-760k.onrender.com/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5946784&lng=73.7095365&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
+      // `https://thingproxy-760k.onrender.com/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5946784&lng=73.7095365&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
+      `https://foodiefeastbackend.onrender.com/api/menu/${resId}`
     );
 
     const RestaurantMenuData = await fetchMenu.json();

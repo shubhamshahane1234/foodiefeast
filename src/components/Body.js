@@ -14,7 +14,8 @@ const Body = () => {
   async function fetchData() {
     const data = await fetch(
       // `https://api.allorigins.win/raw?url=${encodeURIComponent(
-      "https://thingproxy-760k.onrender.com/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5946784&lng=73.7095365&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      // "https://thingproxy-760k.onrender.com/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5946784&lng=73.7095365&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://foodiefeastbackend.onrender.com/api/restaurants"
       // )}`
     );
 
