@@ -6,8 +6,8 @@ const Search = (props) => {
   {
     console.log("search return");
     return (
-      <div className="flex items-center justify-center  p-5 sm:w-[359px] m-auto; lg:w-[1673px] m-auto">
-        <div className="rounded-lg bg-gray-100 p-5">
+      <div className="flex items-center justify-center   sm:w-[359px] m-auto; lg:w-[100%]">
+        <div className="rounded-lg bg-gray-100 p-[1vw]">
           <div className="flex">
             <div className="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-200 bg-white p-5">
               <svg
