@@ -17,7 +17,8 @@ const RestaurantCard = (props) => {
         <h2
           className="
         text-xl  
-        font-semibold"
+        font-semibold
+        truncate overflow-hidden"
         >
           {name}
         </h2>
