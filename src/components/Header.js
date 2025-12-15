@@ -7,11 +7,11 @@ import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 
 const Header = () => {
-  const [toggler, useToggle] = useState("log in");
+  const [toggler, useToggle] = useState("Log in");
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const toggle = () => {
-    toggler == "log in" ? useToggle("log out") : useToggle("log in");
+    toggler == "Log in" ? useToggle("Log out") : useToggle("Log in");
   };
   const cartItems = useSelector((store) => store.cart.items);
   const dishData = useSelector((store) => store.dish.data);
@@ -61,7 +61,7 @@ const Header = () => {
                   fill={onlineStatus ? "#5EFF09" : "red"}
                 />
               </svg>
-              <span>{onlineStatus ? "online" : "offline"}</span>
+              <span>{onlineStatus ? "Online" : "Offline"}</span>
             </div>
 
             <button
