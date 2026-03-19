@@ -18,14 +18,14 @@ const Grocery = lazy(() => import("./components/Grocery.js"));
 import * as Sentry from "@sentry/react";
 
 Sentry.init({
-  dsn: process.env.SENTRY_DSN,
-  integrations: [Sentry.browserTracingIntegration()],
-  tracesSampleRate: 1.0,
+  dsn: "https://d782e7fc8cefd59469328065e2822208@o4510917729779712.ingest.de.sentry.io/4511071333187664",
+  sendDefaultPii: true,
 });
 const App = () => {
   return (
     <>
       <Provider store={appStore}>
+        {console.log(process.env.SENTRY_DSN)}
         <div className="flex flex-col min-h-[100vh] justify-between">
           <Header className="column" />
           <Outlet className="column" />

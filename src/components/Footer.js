@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../public/Assets/logo_name.png";
+import ErrorButton from "./ErrorButton.js";
 
 const Footer = () => {
   return (
@@ -42,12 +43,13 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
+                {/* <a
                   href="#"
                   className="text-gray-400 hover:text-white transition duration-300"
                 >
                   Investors
-                </a>
+                </a> */}
+                <ErrorButton />
               </li>
             </ul>
           </div>
