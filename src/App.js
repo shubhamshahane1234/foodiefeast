@@ -18,9 +18,19 @@ const Grocery = lazy(() => import("./components/Grocery.js"));
 import * as Sentry from "@sentry/react";
 
 Sentry.init({
-  dsn: "https://d782e7fc8cefd59469328065e2822208@o4510917729779712.ingest.de.sentry.io/4511071333187664",
+  dsn: import.meta.env.SENTRY_DSN,
   sendDefaultPii: true,
+  integrations: [
+    // send console.log, console.warn, and console.error calls as logs to Sentry
+    Sentry.consoleLoggingIntegration({ levels: ["log", "warn", "error"] }),
+  ],
+  // Enable logs to be sent to Sentry
+  enableLogs: true,
 });
+Sentry.metrics.count("button_click", 1);
+Sentry.metrics.gauge("page_load_time", 150);
+Sentry.metrics.distribution("response_time", 200);
+Sentry.logger.info("User triggered test log", { log_source: "sentry_test" });
 const App = () => {
   return (
     <>

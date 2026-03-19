@@ -5,7 +5,7 @@ import Search from "./Search";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import userContext from "./../utils/userContext";
-
+import * as Sentry from "@sentry/react";
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [filterData, setFilter] = useState(null);
@@ -35,7 +35,7 @@ const Body = () => {
     setFilter(cards);
     console.log("useEffect");
   }
-
+  Sentry.logger.info("User triggered test log", { log_source: "sentry_test" });
   useEffect(
     () => {
       fetchData();
@@ -58,6 +58,7 @@ const Body = () => {
   console.log("body", filterData, restaurants);
   {
     console.log("return");
+
     return filterData == null ? (
       <Shimmer />
     ) : (
