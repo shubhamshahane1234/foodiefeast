@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 const Shimmer = () => {
   return (
     <>
-      <section class="">
-        <div class="px-4 py-8 mx-auto max-w-8xl">
-          <div class="space-y-4">
-            <h2 class="text-3xl font-bold text-center">RESTAURANTS</h2>
+      <section className="">
+        <div className="px-4 py-8 mx-auto max-w-8xl">
+          <div className="space-y-4">
+            <h2 className="text-3xl font-bold text-center">RESTAURANTS</h2>
           </div>
-          <div class="relative w-full p-4 mt-16">
+          <div className="relative w-full p-4 mt-16">
             {/* Grid for restaurant cards */}
-            <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {/* Mapping over filterData to render restaurant cards */}
               {Array(15)
                 .fill("dummy")

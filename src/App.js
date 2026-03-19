@@ -15,7 +15,13 @@ import appStore from "./utils/appStore.js";
 import Footer from "./components/Footer.js";
 
 const Grocery = lazy(() => import("./components/Grocery.js"));
+import * as Sentry from "@sentry/react";
 
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  integrations: [Sentry.browserTracingIntegration()],
+  tracesSampleRate: 1.0,
+});
 const App = () => {
   return (
     <>
@@ -59,4 +65,8 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <Sentry.ErrorBoundary fallback={<p>Something went wrong</p>}>
+    <RouterProvider router={appRouter} />
+  </Sentry.ErrorBoundary>
+);

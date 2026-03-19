@@ -49,7 +49,7 @@ const Body = () => {
   };
 
   const filter = () => {
-    const filtered = restaurants.filter((item) => {
+    const filtered = restaurants?.filter((item) => {
       return item.info.name.toLowerCase().includes(search.toLowerCase());
     });
 
@@ -67,27 +67,28 @@ const Body = () => {
 
           {/* <div className="flex flex-wrap m-auto space-y-3 w-full lg:w-[1300px] mt-20 lg:mt-0 justify-between lg:justify-start"> */}
 
-          <section class="">
-            <div class="px-4 py-8 mx-auto max-w-8xl">
-              <div class="space-y-4">
-                <h2 class=" text-2xl lg:text-3xl font-bold text-center">
+          <section className="">
+            <div className="px-4 py-8 mx-auto max-w-8xl">
+              <div className="space-y-4">
+                <h2 className=" text-2xl lg:text-3xl font-bold text-center">
                   RESTAURANTS
                 </h2>
-                {/* <p class="mx-auto font-light text-center text-gray-600 max-w-96">
+                {/* <p className="mx-auto font-light text-center text-gray-600 max-w-96">
             Here are few project i worked on recently
           </p> */}
               </div>
-              <div class="relative w-full p-4 mt-16">
-                {/* <div class="absolute left-0 hidden w-full h-px -translate-y-1/2 bg-gray-950/10 lg:top-1/2 md:top-1/3 md:block"></div>
-          <div class="absolute hidden w-px h-full md:block bg-gray-950/10 left-1/2 lg:left-1/3"></div>
-          <div class="absolute left-0 hidden w-full h-px lg:w-px lg:h-full bg-gray-950/10 lg:left-2/3 top-2/3 lg:top-0 md:block"></div> */}
-                <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  ">
+              <div className="relative w-full p-4 mt-16">
+                {/* <div className="absolute left-0 hidden w-full h-px -translate-y-1/2 bg-gray-950/10 lg:top-1/2 md:top-1/3 md:block"></div>
+          <div className="absolute hidden w-px h-full md:block bg-gray-950/10 left-1/2 lg:left-1/3"></div>
+          <div className="absolute left-0 hidden w-full h-px lg:w-px lg:h-full bg-gray-950/10 lg:left-2/3 top-2/3 lg:top-0 md:block"></div> */}
+                <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  ">
                   {filterData?.map((card, index) => {
                     return (
                       <Link
+                        key={index}
                         className="m-auto"
                         to={
-                          restaurants.length !== 0
+                          restaurants?.length !== 0
                             ? `/Restaurant/${card?.info?.id}`
                             : ""
                         }

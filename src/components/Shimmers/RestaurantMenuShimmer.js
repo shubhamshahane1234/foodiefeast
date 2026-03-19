@@ -5,23 +5,25 @@ const RestaurantMenuShimmer = () => {
     <>
       <div className="mx-10 sm:mx-20">
         <section className="container mt-8">
-          <div class="animate-pulse">
+          <div className="animate-pulse">
             {/* Placeholder for restaurant name */}
-            <h1 class="text-2xl font-bold text-gray-800 bg-gray-200 h-8 w-3/4 mb-4"></h1>
+            <h1 className="text-2xl font-bold text-gray-800 bg-gray-200 h-8 w-3/4 mb-4"></h1>
 
             {/* Placeholder for rating, cost, and cuisines */}
-            <div class="flex items-center space-x-2 text-gray-700">
-              <div class="bg-gray-200 h-4 w-4"></div>
-              <div class="bg-gray-200 h-4 w-8"></div>
-              <div class="bg-gray-200 h-4 w-12"></div>
+            <div className="flex items-center space-x-2 text-gray-700">
+              <div className="bg-gray-200 h-4 w-4"></div>
+              <div className="bg-gray-200 h-4 w-8"></div>
+              <div className="bg-gray-200 h-4 w-12"></div>
             </div>
 
             {/* Placeholder for cuisines */}
-            <p class="text-gray-600 mt-2 bg-gray-200 h-4 w-5/6"></p>
+            <p className="text-gray-600 mt-2 bg-gray-200 h-4 w-5/6"></p>
           </div>
 
           {/* Placeholder for Menu heading */}
-          <h2 class="text-2xl lg:text-3xl font-bold text-center mt-8 animate-pulse bg-gray-200 h-8 w-1/2 mx-auto"></h2>
+          <h2 className="text-2xl lg:text-3xl font-bold text-center mt-8 animate-pulse bg-gray-200 h-8 w-1/2 mx-auto">
+            "
+          </h2>
 
           {/* Placeholder for menu items */}
           <div className="m-auto sm:m-auto lg:max-w-2xl mx-auto px-6">
