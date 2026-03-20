@@ -17,8 +17,11 @@ import Footer from "./components/Footer.js";
 const Grocery = lazy(() => import("./components/Grocery.js"));
 import * as Sentry from "@sentry/react";
 
+if (!process.env.SENTRY_DSN) {
+  console.warn("Sentry DSN is not set. Sentry will not be initialized.");
+}
 Sentry.init({
-  dsn: import.meta.env.SENTRY_DSN,
+  dsn: process.env.SENTRY_DSN,
   sendDefaultPii: true,
   integrations: [
     // send console.log, console.warn, and console.error calls as logs to Sentry
